@@ -43,3 +43,6 @@ logs/
 .env
 .env.*
 config.local.yaml
+
+# Downloaded Linux Packages
+*.deb
