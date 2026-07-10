@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.aircmd/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models and generated artifacts
+models/**/*.engine
+models/**/*.plan
+models/**/*.onnx
+models/**/*.pt
+models/**/*.pth
+
+# Datasets
+datasets/raw/
+datasets/processed/
+
+# Camera test output
+test_outputs/
+*.jpg
+*.png
+*.mp4
+
+# Logs and benchmarks
+logs/
+*.log
+
+# Secrets and local configuration
+.env
+.env.*
+config.local.yaml
