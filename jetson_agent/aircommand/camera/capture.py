@@ -40,3 +40,17 @@ class CameraCapture:
     """Threaded camera capture that keeps the most recent frame available."""
     def __init__(self, config: CameraConfig) -> None:
         self.config = config
+        self._capture: Optional[cv2.VideoCapture] = None
+        self._thread: Optional[threading.Thread] = None
+
+        self._lock = threading.lock()
+        self._stop_event = threading.Event()
+        self._frame_ready = threading.Event()
+
+        self._latest_frame: Optional[nd.array] = None
+        self._latest_timestamp = 0.0
+        self._frame_id = 0
+        self._capture_fps = 0.0
+        self._read_failures = 0
+
+        self._started = False
